@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind CSS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          spacing: {
+            13: '3.25rem'
+          },
+          fontFamily: {
+            inter: ['Inter'],
+          },
+          colors:{
+            bodat: '#bada55',
+            kopi: '#c0ffee',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- <style type="text/tailwindcss">
+    *{
+      border: 1px solid purple;
+    }
+  </style> -->
+
+</head>
+
+<body>
+
+  <h1 class="text-8xl font-bold text-center my-10">Mari Belajar <span class="bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">TailwindCSS</span></h1>
+
+  <!-- Section Pertama -->
+  <section class="mb-10 bg-gradient-to-r via-red-400 from-indigo-200 to bg-yellow-300">
+    <h2 class="text-3xl text-center">Spacing</h2>
+    <div class="m-13 ">Margin</div>
+    <div class="py-8 ">Padding</div>
+  </section>
+
+  <!-- Section Kedua -->
+  <section class="mb-10 bg-green-200">
+    <h2 class="text-3xl text-center">Sizing</h2>
+    <div class="w-32 h-32 bg-kopi">Kotak 1</div>
+  </section>
+
+  <!-- Section Ketiga -->
+  <section class="mb-96 font-inter max-w-3xl mx-auto">
+    <h2 class="mb-2 text-4xl font-bold">Belajar Mengenai Typography pada Tailwindcss</h2>
+    <div class="mb-4 text-4xlg text-gray-500">By <a href="#" class="text-gray-800 font-semibold">Andrew Napitupulu </a>,
+      11 November 2024</div>
+    <p class="mb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint voluptatum dicta, aspernatur ad, non
+      cum
+      dignissimos commodi voluptatem praesentium cupiditate eveniet velit nostrum impedit animi quaerat unde. Dicta
+      doloremque tempora vel harum dignissimos quo eveniet enim? Ducimus dolores error quisquam earum? Doloremque alias
+      porro qui. Eligendi officiis nulla qui corporis!
+    </p>
+    <blockquote class="mb-4 italic font-thin text-xl ">
+      "Lorem ipsum dolor sit, amet <a href="#" class="font-semibold underline text-blue-600"> consectetur</a>
+      adipisicing elit. Tempora veniam sunt minus cupiditate necessitatibus et
+      ea cumque facere assumenda quaerat."
+    </blockquote>
+    <p class="mb-4">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas accusantium earum atque autem magnam,
+      aspernatur magni sunt eius sit veniam, nobis amet facilis aliquid optio, at dolorum repudiandae voluptatem illum?
+    </p>
+  </section>
+</body>
+
+</html>
