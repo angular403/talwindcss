@@ -14,6 +14,7 @@
 
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           spacing: {
@@ -31,15 +32,17 @@
     }
   </script>
 
-  <!-- <style type="text/tailwindcss">
-    *{
-      border: 1px solid purple;
+  <style type="text/tailwindcss">
+    #toggle:checked ~ label div.toggle-circle{
+      @apply translate-x-3;
     }
-  </style> -->
+
+
+  </style>
 
 </head>
 
-<body>
+<body class="dark-bg-slate-800 dark:text-slate-200">
 
   <h1 class="text-8xl font-bold text-center my-10">Mari Belajar <span
       class="bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">TailwindCSS</span></h1>
@@ -106,7 +109,20 @@
 
   <hr class="my-20">
 
-  <button class="my-20 bg-sky-500 px-5 py-2 font-inter text-white rounded-full block mx-auto hover:bg-sky-500 active:bg-sky-700 focus:ring focus:ring-300">Simpan</button>
+  <div class="flex justify-center">
+    <span class="text-sm text-slate-500 mr-2">Light</span>
+    <input type="checkbox" id="toggle" class="hidden">
+    <label for="toggle">
+      <div class="w-9 h-5 bg-slate-500 rounded-full flex items-center px-0.5 cursor-pointer">
+        <div class="w-4 h-4 bg-white rounded-full toggle-circle"></div>
+      </div>
+    </label>
+    <span class="text-sm text-slate-500 ml-2">Dark</span>
+    
+  </div>
+
+  <button
+    class="my-20 bg-sky-500 px-5 py-2 font-inter text-white rounded-full block mx-auto hover:bg-sky-500 active:bg-sky-700 focus:ring focus:ring-300">Simpan</button>
 
   <div
     class="max-w-lg my-10 border border-slate-200 rounded-xl mx-auto p-5 shadow-sm font-inter hover:bg-sky-500 group">
@@ -118,6 +134,30 @@
     </p>
   </div>
 
+  <div class="max-w-lg border border-slate-200 rounded-xl mx-auto shadow-sm font-inter p-5">
+    <form action="">
+      <label for="email">
+        <span
+          class="block font-semibold after:content-['*'] after:text-red-700 after:ml-0.5 mb-1 text-slate-700">Email</span>
+        <input type="email" id="email" placeholder="Masukkan Email..."
+          class="px-3 py-2 border shadow rounded w-full block text-sm placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:sky-500 focus:border-sky-500 invalid:text-red-600 invalid:focus:ring-red-700 invalid:focus:border-red-700 peer" />
+        <p class="text-red-700 text-sm m-1 invisible peer-invalid:visible ">Email Tidak Valid</p>
+      </label>
+
+    </form>
+  </div>
+
   <div class="mb-96"></div>
-</body>
+
+  <script>
+    const checkbox = document.querySelector
+    ('#toggle');
+    const html = document.querySelector('html');
+
+    checkbox.addEventListener('click',function(){
+      checkbox.checked ? html.classList.add('dark') : html.classList.remove('dark');
+    })
+  </script>
+</body> 
+
 </html>
